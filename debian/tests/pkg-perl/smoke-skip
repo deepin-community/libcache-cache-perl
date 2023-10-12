@@ -1,0 +1,3 @@
+# non-deterministic failures, see #766102
+t/6_test_size_aware_memory_cache.t
+t/7_test_size_aware_shared_memory_cache.t

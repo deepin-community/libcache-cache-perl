@@ -1,4 +1,10 @@
 #!/usr/bin/make -f
 
+# non-deterministic failures, see #766102
+TEST_FILES=$(filter-out t/6_test_size_aware_memory_cache.t t/7_test_size_aware_shared_memory_cache.t,$(wildcard t/*.t))
+
 %:
 	dh $@
+
+override_dh_auto_test:
+	dh_auto_test -- TEST_FILES="$(TEST_FILES)"

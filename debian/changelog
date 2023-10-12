@@ -1,5 +1,224 @@
-template-repository (1.0-1) unstable; urgency=medium
+libcache-cache-perl (1.08-3) unstable; urgency=medium
 
-  * Initial release
+  [ gregor herrmann ]
+  * Rename autopkgtest configuration file(s) as per new pkg-perl-
+    autopkgtest schema.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Salvatore Bonaccorso ]
+  * debian/control: Use HTTPS transport protocol for Vcs-Git URI
+
+  [ gregor herrmann ]
+  * debian/copyright: change Copyright-Format 1.0 URL to HTTPS.
+  * Remove Antonio Radici from Uploaders. Thanks for your work!
+
+  [ Alex Muntada ]
+  * Remove inactive pkg-perl members from Uploaders.
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-* headers for switch to salsa.debian.org
+
+  [ Laurent Baillet ]
+  * fix lintian file-contains-trailing-whitespace warning
+
+  [ gregor herrmann ]
+  * debian/watch: use uscan version 4.
+
+  [ Debian Janitor ]
+  * Bump debhelper from deprecated 7 to 12.
+  * Set debhelper-compat version in Build-Depends.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Thu, 30 Jun 2022 23:36:40 +0100
+
+libcache-cache-perl (1.08-2.1) unstable; urgency=medium
+
+  * Non maintainer upload by the Reproducible Builds team.
+  * No source change upload to rebuild on buildd with .buildinfo files.
+
+ -- Holger Levsen <holger@debian.org>  Mon, 13 Jun 2022 17:18:10 +0200
+
+libcache-cache-perl (1.08-2) unstable; urgency=medium
+
+  * Team upload.
+  * Also skip the two non-deterministically failing tests for normal builds.
+    (Closes: #766102)
+
+ -- Niko Tyni <ntyni@debian.org>  Fri, 16 Oct 2015 21:21:53 +0300
+
+libcache-cache-perl (1.08-1) unstable; urgency=medium
+
+  * Team upload.
+  * Imported Upstream version 1.08.
+    + drop 0001-Make-tests-aware-of-running-time.patch, applied upstream
+  * Skip non-deterministically failing tests in autopkgtest setups.
+    (See #766102, still not fully fixed)
+
+ -- Niko Tyni <ntyni@debian.org>  Tue, 28 Apr 2015 22:35:44 +0300
+
+libcache-cache-perl (1.07-2) unstable; urgency=medium
+
+  * Team upload.
+  * Add patch from Petr Písař to fix nondeterministic test failures.
+    (Closes: #766102)
+  * Update years of packaging copyright.
+  * Update Upstream-Contact in debian/copyright.
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 24 Oct 2014 14:30:00 +0200
+
+libcache-cache-perl (1.07-1) unstable; urgency=low
+
+  * Team upload
+
+  [ Salvatore Bonaccorso ]
+  * Change Vcs-Git to canonical URI (git://anonscm.debian.org)
+  * Change search.cpan.org based URIs to metacpan.org based URIs
+  * Update Vcs-Browser URL to cgit web frontend
+
+  [ gregor herrmann ]
+  * Strip trailing slash from metacpan URLs.
+
+  [ Axel Beckert ]
+  * debian/copyright: migrate pre-1.0 format to 1.0 using "cme fix dpkg-
+    copyright"
+  * Import new upstream release
+  * Really (or re-) add use-Digest-SHA.patch patch to use Digest::SHA
+    instead of Digest::SHA1.
+  * Fix pkg-perl-specific lintian warning missing-testsuite-header.
+  * Bump Standards-Version to 3.9.6 (no changes needed)
+  * Apply wrap-and-sort.
+
+ -- Axel Beckert <abe@debian.org>  Sat, 11 Oct 2014 00:11:24 +0200
+
+libcache-cache-perl (1.06-2) unstable; urgency=low
+
+  * Team upload.
+
+  [ Nathan Handler ]
+  * debian/watch: Update to ignore development releases.
+
+  [ Ansgar Burchardt ]
+  * debian/control: Convert Vcs-* fields to Git.
+
+  [ Salvatore Bonaccorso ]
+  * Convert to '3.0 (quilt)' source package format.
+  * debian/control:
+    - Change versioned Build-Depends-Indep on perl (>= 5.8.0) to
+      unversioned Build-Depends-Indep on perl. Remove versioned Depends
+      on perl and add ${perl:Depends}.
+    - Make (Build-)Depends(-Indep) on liberror-perl and
+      libipc-sharelite-perl unversioned as the version is already
+      satisfied in oldstable.
+    - Drop (Build-)Depends(-Indep) on libdigest-sha1-perl.
+  * debian/rules: Switch to a tiny debian/rules makefile.
+  * debian/copyright:
+    - Update Format-Specification to revision 135 of DEP5.
+    - Add myself to copyright for debian/* packaging.
+    - Explicitly refer to GPL-1 license text in common-licenses.
+    - Refer to Debian systems in general instead of only Debian
+      GNU/Linux systems.
+  * Bump Standards-Version to 3.9.2.
+  * Add use-Digest-SHA.patch patch to use Digest::SHA instead of
+    Digest::SHA1.
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 06 Aug 2011 21:43:49 +0200
+
+libcache-cache-perl (1.06-1) unstable; urgency=low
+
+  [ Antonio Radici ]
+  * New upstream release
+  * debian/control:
+    + added me to the Uploaders
+    + libipc-sharelite-perl (>= 0.09-1) is now (>= 0.09)
+    + debhelper now (>= 7)
+    + Standards-Version bumped to 3.8.0
+  * debian/compat bumped to 7
+  * debian/rules updated by dh-make-perl --refresh --dh 7
+  * debian/copyright:
+    + upgrade to the new format
+    + all copyrights of debian/* are now in the list
+
+  [ gregor herrmann ]
+  * debian/watch: use dist-based URL.
+  * debian/control:
+    - added: Vcs-Svn field (source stanza); Vcs-Browser field (source stanza);
+      Homepage field (source stanza); ${misc:Depends} to Depends: field.
+    - removed: XS-Vcs-Svn fields
+
+ -- Antonio Radici <antonio@dyne.org>  Sun, 01 Mar 2009 12:04:38 +0000
+
+libcache-cache-perl (1.05-2) unstable; urgency=low
+
+  * Adopted for Debian Perl Group
+
+ -- Krzysztof Krzyzaniak (eloy) <eloy@debian.org>  Fri, 17 Nov 2006 12:27:12 +0100
+
+libcache-cache-perl (1.05-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control:
+      - Use my debian.org email address.
+      - Switched debhelper to Build-Depends
+
+ -- Stephen Quinney <sjq@debian.org>  Thu, 15 Jun 2006 21:25:56 +0100
+
+libcache-cache-perl (1.04-1) unstable; urgency=medium
+
+  * New upstream release - fixes permissions on temp cache files
+
+ -- Stephen Quinney <sjq@debian.org>  Fri, 18 Mar 2005 08:22:25 +0000
+
+libcache-cache-perl (1.03-1) unstable; urgency=low
+
+  * New upstream release
+  * There is now, finally, an updated version of the libdigest-sha1-perl
+    package. Updated dependency to (>= 2.02) closes: #215107.
+  * debian/watch - Added new file.
+  * debian/changelog - Completely rewritten to make it much clearer.
+  * debian/rules - Tidied and brought in line with my current style.
+  * No longer install DISCLAIMER or STYLE as they serve no real purpose.
+
+ -- Stephen Quinney <sjq@debian.org>  Fri,  8 Oct 2004 20:31:15 +0100
+
+libcache-cache-perl (1.02-3) unstable; urgency=low
+
+  * Updated dependency on libipc-sharelite-perl to the minimum required
+    version of (>= 0.09-1). Thanks to Jay Bonci for upgrading that
+    package. This resolves half of the bug report #215107.
+  * Simplified the dependencies. Removed the libstorable-perl dependency
+    and required a minimum perl version of (>= 5.8.0) as there is no
+    separate libstorable-perl package any more.
+
+ -- Stephen Quinney <sjq@debian.org>  Sun,  7 Mar 2004 08:52:24 +0000
+
+libcache-cache-perl (1.02-2) unstable; urgency=low
+
+  * New maintainer, closes: #214876.
+  * debian/control:
+      - Updated dependencies on libstorable-perl and liberror-perl.
+      - Removed dependency on libdigest-md5-perl as it seems to no longer
+        be necessary.
+  * Replaced use of DH_COMPAT with debian/compat.
+  * debian/rules:
+      - replace with my current personal style.
+
+ -- Stephen Quinney <sjq@debian.org>  Fri, 10 Oct 2003 14:59:23 +0100
+
+libcache-cache-perl (1.02-1) unstable; urgency=low
+
+  * New upstream version (closes: bug#152999)
+  * Fix dependencies (closes: bug#159197)
+  * Fix copyright (closes: bug#157552)
+  * Orphaned
+
+ -- Michael Alan Dorman <mdorman@debian.org>  Wed,  8 Oct 2003 09:17:21 -0400
+
+libcache-cache-perl (1.0-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Michael Alan Dorman <mdorman@debian.org>  Tue,  9 Apr 2002 09:57:50 -0400
+
+libcache-cache-perl (0.99-1) unstable; urgency=low
+
+  * Initial packaging
+
+ -- Michael Alan Dorman <mdorman@debian.org>  Thu, 21 Feb 2002 11:40:26 -0500

@@ -1,15 +1,29 @@
-Source: template-repository
-Section: unknown
+Source: libcache-cache-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13)
+Build-Depends-Indep: liberror-perl,
+                     libipc-sharelite-perl,
+                     perl
+Standards-Version: 3.9.6
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libcache-cache-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libcache-cache-perl.git
+Homepage: https://metacpan.org/release/Cache-Cache
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: libcache-cache-perl
+Architecture: all
+Depends: liberror-perl,
+         libipc-sharelite-perl,
+         ${misc:Depends},
+         ${perl:Depends}
+Description: Managed caches of persistent information
+ The Cache modules are designed to assist a developer in persisting
+ data for a specified period of time.  Often these modules are used in
+ web applications to store data locally to save repeated and redundant
+ expensive calls to remote machines or databases.  People have also
+ been known to use Cache::Cache for its straightforward interface in
+ sharing data between runs of an application or invocations of a
+ CGI-style script or simply as an easy to use abstraction of the
+ filesystem or shared memory.

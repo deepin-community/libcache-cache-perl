@@ -1,0 +1,68 @@
+Description: Use Digest::SHA instead of unavailable Digest::SHA1
+Author: Axel Beckert <abe@debian.org>
+
+diff --git a/META.json b/META.json
+index d1d0d85..f734265 100644
+--- a/META.json
++++ b/META.json
+@@ -32,7 +32,7 @@
+       },
+       "runtime" : {
+          "requires" : {
+-            "Digest::SHA1" : "2.02",
++            "Digest::SHA" : "0",
+             "Error" : "0.15",
+             "File::Spec" : "0.82",
+             "IPC::ShareLite" : "0.09",
+diff --git a/META.yml b/META.yml
+index b40a4b1..3508ee9 100644
+--- a/META.yml
++++ b/META.yml
+@@ -18,7 +18,7 @@ no_index:
+     - t
+     - inc
+ requires:
+-  Digest::SHA1: '2.02'
++  Digest::SHA: '0'
+   Error: '0.15'
+   File::Spec: '0.82'
+   IPC::ShareLite: '0.09'
+diff --git a/Makefile.PL b/Makefile.PL
+index 676784a..a1c4026 100644
+--- a/Makefile.PL
++++ b/Makefile.PL
+@@ -11,7 +11,7 @@ my $VERSION_FROM = 'lib/Cache/Cache.pm';
+ my $COMPRESS = 'gzip';
+ my $SUFFIX = '.gz';
+ my $DEFAULT_PREREQ_PM = {
+-                         'Digest::SHA1' => '2.02',
++                         'Digest::SHA' => '0',
+                          'File::Spec' => '0.82',
+                          'Storable' => '1.014',
+                          'IPC::ShareLite' => '0.09',
+diff --git a/README b/README
+index 5e719f0..009187b 100644
+--- a/README
++++ b/README
+@@ -46,7 +46,7 @@ CACHE::CACHE VERSUS CHI
+ 
+ REQUIREMENTS
+ 
+-  Digest::SHA1
++  Digest::SHA
+   Error
+   File::Spec
+   File::Path
+diff --git a/lib/Cache/FileBackend.pm b/lib/Cache/FileBackend.pm
+index 71da59e..4d0781c 100644
+--- a/lib/Cache/FileBackend.pm
++++ b/lib/Cache/FileBackend.pm
+@@ -12,7 +12,7 @@ package Cache::FileBackend;
+ 
+ use strict;
+ use Cache::CacheUtils qw( Assert_Defined Build_Path Freeze_Data Thaw_Data );
+-use Digest::SHA1 qw( sha1_hex );
++use Digest::SHA qw( sha1_hex );
+ use Error;
+ use File::Path qw( mkpath );
+ use File::Temp qw( tempfile );
